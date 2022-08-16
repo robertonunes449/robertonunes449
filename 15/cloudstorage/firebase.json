@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "cloudstorage",
+      "public": "dist/cloudstorage",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

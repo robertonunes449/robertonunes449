@@ -1,0 +1,19 @@
+<p>people works!</p>
+<div fxLayout="row" fxLayoutAlign="center center" >
+    <h1>Pessoas</h1>
+</div>
+
+<div>
+    <button  mat-button color="primary" (click)="generate()"> Gerar Pessoas</button>
+</div>
+<mat-divider></mat-divider>
+
+<div *ngIf="people$ | async; let people">
+    <ul>
+        <li *ngFor="let p of people">
+            Nome: {{p.name}} - Idade: {{p.age}} <br>
+            Companhia: {{p.company}} - País: {{p.country}} <br>
+            Email: <a href="mailto:{{p.email}}"> {{p.email}} </a>
+        </li>
+    </ul>
+</div>

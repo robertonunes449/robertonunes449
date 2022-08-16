@@ -1,0 +1,31 @@
+<mat-card fxFlex>
+    <mat-card-title>
+        Funcionario Form
+    </mat-card-title>
+    <mat-card-content>
+        <div fxLayout="column" fxLayoutAling="space-between">
+          <mat-form-field>
+            <input matInput [(ngModel)]="funcNome" (keyup.enter)="save()">
+            <mat-hint>O Nome do Funcionario</mat-hint>
+          </mat-form-field>
+          <div fxLayout="row" fxLayoutAling="end end">
+              <button mat-button color="primary" (click)="save()">Save</button>
+              <button mat-button color="warn" (click)="cancel()">Cancel</button>
+          </div>
+        </div>
+
+        <mat-list>
+            <h3 mat-subheader>Funcionarios</h3>
+            <mat-list-item *ngFor="let func of funcionarios">
+                <mat-icon mat-list-icon>person</mat-icon>
+                <h4 mat-line>{{func.nome}}</h4>
+                <button mat-icon-button color="accent" (click)="delete(func)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="edit(func)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

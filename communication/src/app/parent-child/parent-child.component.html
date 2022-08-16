@@ -1,0 +1,15 @@
+<div>
+    <button mat-button color="primary" (click)= "stopwatch.start()">start</button>
+    <button mat-button color="accent" (click)= "stopwatch.stop()">stop</button>
+    <button mat-button color="warn" (click)= "stopwatch.clear()">clear</button>
+</div>
+<app-timer #stopwatch>
+</app-timer>
+
+<div>
+    <button mat-button color="primary" (click)= "start()">start</button>
+    <button mat-button color="accent" (click)= "stop()">stop</button>
+    <button mat-button color="warn" (click)= "clear()">clear</button>
+</div>
+
+<p #myP>Hi</p>

@@ -1,0 +1,57 @@
+<p>two-way-data-binding works!</p>
+
+<section>
+    <mat-card  style="margin: 20px;">
+        <mat-card-content>
+        <form>
+        <mat-form-field style="width: 100%;">
+            <input matImput placeholder="Enter your Name"
+            [(ngModel)]="name1"name="anyname1">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+            <input matImput placeholder="Enter your Name"
+            [(ngModel)]="name2" name="anyname2">
+        </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-content>
+        <mat-card-actions>
+            <p>{{ name1 }}</p>
+            <p>{{ name2 }}</p>
+        </mat-card-actions>
+    </mat-card-content>
+    </mat-card>
+</section>
+<br>
+<section>
+    <mat-card  style="margin: 20px;">
+        <mat-card-content>
+        <form>
+        <mat-form-field style="width: 100%;">
+            <input matImput placeholder="First Name" name="firstName"
+            [(ngModel)]="client.firstName">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+            <input matImput placeholder="Last Name" name="lastName"
+            [(ngModel)]="client.lastName" >
+            <mat-form-field style="width: 100%;">
+                <input matImput placeholder="Adress" name="adress"
+                [(ngModel)]="client.adress">
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <input matImput placeholder="Age" type="number" name="age"
+                [(ngModel)]="client.age">
+            </mat-form-field>
+        </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-content>
+        <mat-card-actions>
+           <p>First Name: {{client.firstName}}</p>
+           <p>Last Name: {{client.lastName}}</p>
+           <p>Adress: {{client.adress}}</p>
+           <p>Age: {{client.age}}</p>
+        </mat-card-actions>
+    </mat-card-content>
+    </mat-card>
+</section>

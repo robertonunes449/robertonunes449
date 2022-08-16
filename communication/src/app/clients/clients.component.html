@@ -1,0 +1,24 @@
+<p>clients works!</p>
+
+<mat-card>
+    <mat-card-content>
+        <section>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="First Name" [(ngModel)] = "name">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Age" [(ngModel)] = "age" type="number">
+            </mat-form-field>
+            <button mat-mini-fab color= "primary" (click) = "save()">
+                <mat-icon>check</mat-icon>
+            </button>
+        </section>
+    </mat-card-content>
+</mat-card>
+
+<app-item-client *ngFor = "let c of clients; let i=index " 
+[client]= "c"
+(removeClient) = "deleteClient(i)"
+(updateClient) = "updateClient($event, i)"> 
+</app-item-client>

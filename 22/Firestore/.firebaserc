@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "products-11797": {
+      "hosting": {
+        "Firestore": [
+          "products-11797"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "products-prod-3b90b"
+  }
+}

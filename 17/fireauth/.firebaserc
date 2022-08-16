@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fireauth-850fb": {
+      "hosting": {
+        "fireauth": [
+          "fireauth-850fb"
+        ]
+      }
+    }
+  }
+}

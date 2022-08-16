@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "products-11797": {
+      "hosting": {
+        "cloudstorage": [
+          "products-11797"
+        ]
+      }
+    }
+  }
+}

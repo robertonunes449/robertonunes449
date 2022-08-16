@@ -1,0 +1,11 @@
+<p>subjects-child works!</p>
+
+<div class="box">
+<h1>{{name}}</h1>
+<button (click)="connect()" *ngIf="!connected">Connect</button>
+<button (click)="disconnect()" *ngIf="connected">Disconnect</button>
+
+<hr>
+<p *ngFor= "let s of log">{{s}}</p>
+</div>
+

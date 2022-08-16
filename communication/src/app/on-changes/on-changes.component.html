@@ -1,0 +1,16 @@
+<p>on-changes works!</p>
+<mat-card>
+    <mat-card-content>
+        <section>
+            <mat-form-field>
+                <input matInput placeholder="Your Name" [(ngModel)]="name">
+            </mat-form-field>
+            <button mat-icon-button color="primary" (click)="updateName()">
+                <mat-icon>check</mat-icon>
+            </button>
+        </section>
+        <section>
+            <app-name-change [name] = "newName"  ></app-name-change>
+        </section>
+    </mat-card-content>
+</mat-card>

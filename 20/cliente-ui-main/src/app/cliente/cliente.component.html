@@ -1,0 +1,137 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;" (click)="listar()">Clientes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+          aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="add()">+ Cliente<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container" id="divPrincipal" #divPrincipal>
+  <div class="row">
+    <div *ngFor="let cliente of clientes" class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row">
+          <div class="col-6">
+            <a href=""><img class="resize" [src]="exibirImagem(cliente.foto)" alt=""></a>
+          </div>
+          <div class="col-6 card-title align-self-center mb-0">
+            <h5>{{cliente?.nome}}</h5>
+            <p class="m-0">{{cliente?.email}}</p>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><em class="fa fa-envelope float-right"></em>{{cliente?.email}}</li>
+          <li class="list-group-item"><em class="fa fa-phone float-right"></em>Telefone: {{cliente?.telefone}}</li>
+          <li class="list-group-item"><em
+            class="fa fa-calendar float-right"></em>Cadastro: {{cliente?.dataCadastro | date: 'dd/MM/yyyy HH:mm:ss'}}
+          </li>
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <a (click)="abrirDetalhe(cliente, 'edit')" class="btn btn-primary tooltips" data-placement="top"
+               data-original-title="Edit"><em class="fa fa-pencil"></em> </a>
+            <a (click)="abrirDetalhe(cliente, 'delete')" class="btn btn-secondary tooltips" data-placement="top"
+               data-original-title="Delete"><em class="fa fa-times"></em></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="clienteModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="clienteLabel">Manutenção de Cliente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form >
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" [(ngModel)]="clienteSelecionado.nome" name="nome" class="form-control" id="nome"
+                     placeholder="Nome" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control" id="email"
+                     [(ngModel)]="clienteSelecionado.email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="matricula">Matricula</label>
+              <input type="text" name="matricula" class="form-control"
+                     [(ngModel)]="clienteSelecionado.matricula"
+                     id="matricula" placeholder="Matrícula"
+                     required>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <input type="text" name="telefone" class="form-control"
+                     [(ngModel)]="clienteSelecionado.telefone"
+                     id="telefone" placeholder="telefone"
+                     required>
+            </div>
+            <div class="form-group">
+              <label>Foto</label>
+              <input type="file" style="display: none" (change)="selecionarArquivo($event)" #fileUpload
+                     accept=".png, .jpg, .jpeg, .pdf"/>
+              <button mat-mini-fab color="primary" class="upload-btn">
+                <span class="material-icons" (click)="fileUpload.click()">upload_file</span>
+              </button>
+            </div>
+            <div class="form-group">
+              <label><strong>Data Cadastro</strong></label>
+              <strong
+                class="fa fa-calendar float-right"></strong>: {{clienteSelecionado?.dataCadastro | date: 'dd/MM/yyyy HH:mm:ss'}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnFechar" #btnFechar class="btn btn-secondary" data-dismiss="modal">Fechar
+              </button>
+              <button type="button" (click)="salvarCliente()"
+                      class="btn btn-primary">Salvar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="deleteClienteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModelLabel">Deletar Cliente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">X</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Confirma a exclusão do Cliente {{clienteSelecionado?.nome}}?</p>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+            <button (click)="deletar(clienteSelecionado?.id)" class="btn btn-danger" data-dismiss="modal">Sim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="clientes?.length === 0" class="col-lg-12 col-md-12 col-xl-12">
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Sem clientes!</h4>
+    <p>Não há cliente cadastrado.</p>
+  </div>
+</div>

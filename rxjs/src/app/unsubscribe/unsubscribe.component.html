@@ -1,0 +1,15 @@
+<p>unsubscribe works!</p>
+<div fxFill fxLayout="column" fxLayoutAling="start">
+    <div fxFill fxLayout="row" fxLayoutAling="start">
+
+    <button mat-button color="warn" (click)="subscribe()"> Subscribe All</button>
+    <mat-spinner diameter="20"  color="warn" *ngIf="subscriptionsAreActive"></mat-spinner>
+
+    </div>
+    <div>
+        <button mat-button
+        color="primary"
+        [disabled]= "!subscriptionsAreActive"
+        (click)="unsubscribe()">Unsubscribe All</button>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+<p>reactive-form-validation works!</p>
+<div layout="column" layout-fill>
+    <div align="center" layout="row" layout-align="center center">
+  
+      <mat-card class="info-card mat-elevation-z8" flex="80" style="margin-top: 60px;width: 800px;;">
+  
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle>
+        </mat-card-subtitle>
+  
+        <mat-card-content fxLayout="column" fxLayoutAlign="stretch" >
+          
+          <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="start stretch" >
+  
+            <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between  start">
+              <mat-form-field fxFlex="45" >  
+                <input matInput type="text" formControlName="firstName" placeholder="First Name" >
+                <mat-error *ngIf="clientForm.controls.firstName.hasError('required')">
+                  Please enter the First Name
+                </mat-error>
+                <mat-error *ngIf="clientForm.controls.firstName.hasError('minlength')">
+                  First Name must be {{clientForm.controls.firstName.errors.minlength.requiredLength}} or more characters
+                  Actual: {{clientForm.controls.firstName.errors.minlength.actualLength}}
+                </mat-error>
+              </mat-form-field> 
+              <mat-form-field fxFlex="45">
+                <input matInput type="text" formControlName="lastName" placeholder="Last Name" >
+                <mat-error *ngIf="clientForm.controls.lastName.hasError('required')">
+                  Please enter the Last Name
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between  start">
+              <mat-form-field fxFlex="25">
+                <input matInput formControlName="birth" [matDatepicker]="dtbirth" placeholder="Date of Birth">
+                <mat-datepicker-toggle matSuffix [for]="dtbirth"></mat-datepicker-toggle>
+                <mat-datepicker #dtbirth></mat-datepicker>
+                <mat-error *ngIf="clientForm.controls.birth.hasError('required')">
+                  Please enter the Birth
+                </mat-error>
+              </mat-form-field>
+  
+              <mat-form-field fxFlex="50">
+                <input matInput formControlName="email" placeholder="Enter your email" type="email" >
+                <mat-error *ngIf="clientForm.controls.email.hasError('required')">
+                  Please enter the Email
+                </mat-error>
+                <mat-error *ngIf="clientForm.controls.email.hasError('email')">
+                  Please enter a valid Email
+                </mat-error>
+              </mat-form-field>
+  
+              <mat-form-field fxFlex="20">
+                <input matInput formControlName="age" placeholder="Age" type="number">
+                <mat-error *ngIf="clientForm.controls.age.hasError('required')">
+                  Please enter the Age
+                </mat-error>
+              </mat-form-field>
+            </div>          
+  
+            <div fxFlex="100" fxLayoutAlign="start">
+                <h4>Address:</h4>
+            </div>
+            <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between start">
+              <mat-form-field fxFlex="40" >  
+                <input matInput type="text"  formControlName="street" placeholder="Street" >
+                <mat-error *ngIf="clientForm.controls.street.hasError('required')">
+                  Please enter the Street
+                </mat-error>
+              </mat-form-field> 
+              <mat-form-field fxFlex="30">
+                <input matInput type="text"  formControlName="city" placeholder="City" >
+                <mat-error *ngIf="clientForm.controls.city.hasError('required')">
+                  Please enter the City
+                </mat-error>
+              </mat-form-field>
+   
+              <mat-form-field fxFlex="20">
+                <mat-select placeholder="State" formControlName="state">
+                  <mat-option *ngFor="let s of [ 'SP', 'PR', 'SC', 'RS', 'PA', 'RO']" [value]="s">
+                    {{s}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+  
+            <div fxFlex="100" fxLayoutAlign="start">
+              <h4>Telephones: </h4>
+            </div> 
+  
+            <div fxFlex="100"  fxLayout="row wrap" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+              <mat-form-field fxFlex="45" >
+                <input matInput type="text"  formControlName="phone1" placeholder="Telephone 1 " >
+                <mat-error *ngIf="clientForm.controls.phone1.hasError('required')">
+                  Please enter the Telephone 
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field fxFlex="45" >  
+                <input matInput type="text"  formControlName="phone2" placeholder="Telephone 2" >
+                <mat-error *ngIf="clientForm.controls.phone2.hasError('required')">
+                  Please enter the Telephone 
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <button mat-button color="primary" type="submit" [disabled]="!clientForm.valid" >
+              <mat-icon>done</mat-icon>Submit
+            </button>
+            
+          </form>
+  
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+      </mat-card>
+  
+  
+    </div>
+  </div>
+      
+  
+  
+  
+    
+  
+  

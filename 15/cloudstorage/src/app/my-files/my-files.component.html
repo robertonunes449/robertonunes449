@@ -1,0 +1,11 @@
+<p>my-files works!</p>
+<mat-list>
+    <h1 mat-subheader>FILES</h1>
+    <mat-list-item *ngFor="let f of files|async">
+        <mat-icon mat-list-icon>folder</mat-icon>
+            <h1 mat-line> {{f.filename}} </h1>
+            <p mat-line> {{f.date | date: 'medium'}} <br> {{f.size}}  bytes</p>
+            <a [href]="f.url|async"><mat-icon>cloud_download</mat-icon></a>
+            <button mat-icon-button color="accent" (click)="delete(f)"><mat-icon>delete_outline</mat-icon></button>
+    </mat-list-item>
+</mat-list>

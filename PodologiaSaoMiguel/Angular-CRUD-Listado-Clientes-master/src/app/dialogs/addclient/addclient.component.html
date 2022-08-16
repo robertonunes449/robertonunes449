@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>Agregar Nuevo Cliente</h2>
+<mat-dialog-content>
+    <form [formGroup]="newClient" (ngSubmit)="addClient()">
+        <mat-form-field>
+            <input matInput placeholder="Nombre" formControlName=name minlength="4" maxlength="20" required>
+            <mat-error>Minimo 4 letras</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Apellido" formControlName=surname minlength="4" maxlength="20" required>
+            <mat-error>Minimo 4 letras</mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field>
+            <input matInput [matDatepicker]="myDatepicker" placeholder="Fecha de Nacimiento" formControlName=date required>
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+            <mat-error>Elegir Fecha es Requerido</mat-error>
+          </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field>
+            <input matInput placeholder="Pais" formControlName=country minlength="2" maxlength="20" required>
+            <mat-error>Minimo 2 letras</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ciudad" formControlName=city minlength="2" maxlength="20" required>
+            <mat-error>Minimo 2 letras</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="Dni" formControlName=dni minlength="2" maxlength="12" required>
+            <mat-error>Minimo 2 numeros</mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field>
+            <input matInput placeholder="Dirección" formControlName=address minlength="2" maxlength="40" required>
+            <mat-error>Minimo 2 letras</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="Telefono" formControlName=telephone minlength="2" maxlength="18" required>
+            <mat-error>Minimo 2 numeros</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="Email" placeholder="Email" formControlName=email minlength="2" maxlength="30" required>
+            <mat-error>Ingrese un Email valido!</mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <div class="dialog-footer">
+            <button mat-raised-button color="accent" class="buttonF" mat-dialog-close>Cerrar</button>
+            <button mat-raised-button color="primary" type="submit" mat-dialog-close [disabled]="newClient.invalid">Agregar</button>
+        </div>
+    </form>
+</mat-dialog-content>
+

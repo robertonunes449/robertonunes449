@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "fireauth",
+      "public": "dist/fireauth",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
