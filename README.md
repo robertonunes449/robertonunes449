@@ -89,7 +89,7 @@ Esses são os projetos que ganharam vida e que demonstram minha capacidade de tr
 
 ### 📫 Siga o Rastro (Contato)
 
-- <a href="COLOQUE_SEU_LINK_DO_LINKEDIN_AQUI" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+- <a href="https://www.linkedin.com/in/roberto-n-56095714b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 - <a href="mailto:COLOQUE_SEU_EMAIL_AQUI"><img src="https://img.shields.io/badge/-Email-%23D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 
 <div align="center">
