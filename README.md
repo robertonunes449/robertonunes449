@@ -75,7 +75,7 @@ Esses são os projetos que ganharam vida e que demonstram minha capacidade de tr
 ### 📊 O Brilho da Kitsune-bi (Estatísticas Ativas)
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=robertonunes449&show_icons=true&bg_color=0D1117&title_color=FF5733&icon_color=0078D6&text_color=C9D1D9&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=robertonunes449&show_icons=true&bg_color=0D1117&title_color=FF5733&icon_color=0078D6&text_color=C9D1D9&count_private=true"/>
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=robertonunes449&layout=compact&langs_count=7&bg_color=0D1117&title_color=FF5733&icon_color=0078D6&text_color=C9D1D9"/>
 </div>
 
