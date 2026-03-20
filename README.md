@@ -68,7 +68,7 @@ Esses são os projetos que ganharam vida e que demonstram minha capacidade de tr
 |:---|:---|:---:|
 | **Sistema Clínica** | Um artefato criado para gerenciar clínicas de podologia, lidando com agenda, pacientes e prontuários. | [Link (Breve)] |
 | **Sistema Escolar** | Uma relíquia de arquitetura em 4 camadas que gerencia matrículas, turmas e notas. | [Link (Breve)] |
-| **Tetris Logic** | Um jogo que desafia a lógica pura e a manipulação de UI em tempo real. | [Link (Breve)] |
+| **Tetris** | Um jogo que desafia a lógica pura e a manipulação de UI em tempo real. | [Link (Breve)] |
 
 ---
 
