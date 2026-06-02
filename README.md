@@ -79,10 +79,8 @@ Esses são os projetos que ganharam vida e que demonstram minha capacidade de tr
   <img height="180" src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=robertonunes449&layout=compact&langs_count=7&bg_color=0D1117&title_color=FF5733&icon_color=0078D6&text_color=C9D1D9&v=1" alt="Linguagens Mais Usadas"/>
 </div>
 
-<br>
-
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=robertonunes449&background=0D1117&title=FF5733&fire=0078D6&currStreakLabel=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&sideLabels=C9D1D9" alt="Estatísticas de Frequência de Commits" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=robertonunes449&background=0D1117&title=FF5733&fire=0078D6&currStreakLabel=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&sideLabels=C9D1D9" alt="Estatísticas de Frequência de Commits"/>
 </div>
 
 ---
